@@ -12,13 +12,18 @@ namespace OopCar
             Car beetle1 = vwFactory.createCar("Beetle", 50f);
             Car camper = vwFactory.createCar("Camper", 45f);
 
+            Factory bmwFactory = new Factory("BMW");
+            Car the501 = bmwFactory.createCar("The 501", 60f);
+
             TestCar(ref beetle1);
             TestCar(ref camper);
+            TestCar(ref the501);
 
         }
 
         static void TestCar(ref Car car)
         {
+            
             car.Accelerate(10f);
             car.StartEngine();
             car.Accelerate(12f);
@@ -29,28 +34,8 @@ namespace OopCar
             car.StartEngine();
             car.Accelerate(50f);
             car.Accelerate(10f);
-            car.Decelerate(50f);
+            car.Decelerate(car.topSpeed);
             car.StopEngine();
         }
     }
-
-
-    public class Factory
-    {
-        string maker;
-        public Factory(string _maker)
-        {
-            maker = _maker;
-        }
-
-        public Car createCar(string model, float topSpeed)
-        {
-            return new Car(maker, model, topSpeed);
-        }
-    }
-
-
-   
-
-
 }

@@ -9,9 +9,9 @@ namespace OopCar
         }
         string maker;
         string model;
-        float currentSpeed;
-        float topSpeed;
         bool engineRunninng;
+        public float currentSpeed {get; private set;}
+        public float topSpeed {get; private set;}
         public Car(string _maker, string _model, float _topSpeed)
         {
             maker = _maker;

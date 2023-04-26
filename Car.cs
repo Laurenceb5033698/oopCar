@@ -7,9 +7,9 @@ namespace OopCar
         {
             Console.WriteLine(str);
         }
-        string maker;
-        string model;
         bool engineRunninng;
+        public string maker {get; private set;}
+        public string model {get; private set;}
         public float currentSpeed {get; private set;}
         public float topSpeed {get; private set;}
         public Car(string _maker, string _model, float _topSpeed)
